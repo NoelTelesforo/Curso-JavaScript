@@ -36,3 +36,15 @@ console.log(producto);
 
 // Para saber si un objeto esta sellado:
 console.log(Object.isSealed(producto)); // Devuelve un boolean
+
+// Método que retorna un arreglo con los keys del objeto que son nombre, precio y disponible
+console.log( Object.keys(producto));
+
+
+// Método que retorna los valores del objeto: Monitor 20 Pulgadas y true.
+console.log( Object.values(producto));
+
+
+
+// Método que retorna todo el objeto en pares.
+console.log( Object.entries(producto));
