@@ -1,3 +1,5 @@
+
+
 // El tipo de dato boolean solamente puede tener dos valores: true o false.
 
 const boolean1 = true;
