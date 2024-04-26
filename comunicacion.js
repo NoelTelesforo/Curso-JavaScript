@@ -15,7 +15,7 @@ function iniciarApp() {
 function segundaFuncion() {
     console.log('Desde la segunda función');    // Desde la segunda función
 
-    usuarioAutenticado('Noel');
+    usuarioAutenticado('Juan');
 }
 
 
