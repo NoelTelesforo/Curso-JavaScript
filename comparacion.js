@@ -1,5 +1,6 @@
 
 
+
 // Consejos a la hora de comparar booleans
 
 const autenticado = true;
