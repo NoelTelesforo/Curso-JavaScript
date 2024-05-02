@@ -43,7 +43,17 @@ document.addEventListener('DOMContentLoaded', function() {
             spinner.classList.add('hidden');
 
             resetFormulario();
-            
+
+            // Crea una alerta
+            const alertaExito = document.createElement('p');
+            alertaExito.classList.add('bg.gree.500', 'text-white', 'text-center', 'rounded-lg', 'mt-10', 'font-bold', 'text-sm', 'uppercase');
+            alertaExito.textContent = 'Mensaje enviado correctamente';
+
+            formulario.appendChild(alertaExito);
+            setTimeout(() => {
+                alertaExito.remove();
+            }, 3000);
+
         }, 3000);
     }
 
