@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputEmail = document.querySelector('#email');
     const inputAsunto = document.querySelector('#asunto');
     const inputMensaje = document.querySelector('#mensaje');
+    const formulario = document.querySelector('#formulario');
 
     // Asignar eventos a los elementos
     inputEmail.addEventListener('blur', validar);
@@ -13,16 +14,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function validar(e) {
         if (e.target.value.trim() === '') {
-            mostrarAlerta();
+            mostrarAlerta(`El campo ${e.target,id} es obligatorio`);
         } else {
             e.target.classList.remove('error');
         }
     }
 
-    function mostrarAlerta() {
+    function mostrarAlerta(mensaje) {
         // Genera alerta HTML
         const error = document.createElement('p');
-        error.textContent = 'Hubo un error';
+        error.textContent = mensaje;
+        error.classList.add('bg-red-600', 'text-white', 'p-2', 'text-center');
+
+        // Inyecta el error al formulario
+        formulario.appendChild(error);
+        
 
     }
 });
