@@ -4,6 +4,8 @@ const resultado = document.querySelector('#resultado');
 // Eventos
 document.addEventListener('DOMContentLoaded', () => {
     
+    // Muestra los autos al cargar
+    mostrarAutos(autos);
     
 });
 
