@@ -3,7 +3,8 @@ const resultado = document.querySelector('#resultado');
 
 // Eventos
 docyment.addEventListener('DOMContentLoaded', () => {
-    mostrarAutos();
+    
+    
 });
 
 
@@ -21,4 +22,5 @@ function mostrarAutos() {
     `;
 
     // Insertar en el HTML
+    resultado.appendChild(autoHMTL);
 }
