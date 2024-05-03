@@ -50,10 +50,14 @@ year.addEventListener('Change', e => {
 
 minimo.addEventListener('Change', e => {
     datosBusqueda.minimo = e.target.value;
+
+    filtrarAuto();
 });
 
 maximo.addEventListener('Change', e => {
     datosBusqueda.maximo = e.target.value;
+
+    filtrarAuto();
 });
 
 puertas.addEventListener('Change', e => {
@@ -113,7 +117,7 @@ function llenarSelect() {
 
 // Función que filtra en base a la busqueda
 function filtrarAuto() {
-    const resultado = autos.filter(filtrarMarca).filter(filtrarYear)
+    const resultado = autos.filter(filtrarMarca).filter(filtrarYear).filter(filtrarMinimo).filter(filtrarMaximo)
     // console.log(resultado);
 
     mostrarAutos(resultado);
@@ -133,6 +137,22 @@ function filtrarYear(auto) {
     const {year} = datosBusqueda;
     if(year) {
         return auto.year === year;
+    }
+    return auto;
+}
+
+function filtrarMinimo(auto) {
+    const {minimo} = datosBusqueda;
+    if(minimo) {
+        return auto.precio >= minimo;
+    }
+    return auto;
+}
+
+function filtrarMaximo(auto) {
+    const {maximo} = datosBusqueda;
+    if(maximo) {
+        return auto.precio <= maximo;
     }
     return auto;
 }
