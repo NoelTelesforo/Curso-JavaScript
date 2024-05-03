@@ -2,7 +2,7 @@
 const resultado = document.querySelector('#resultado');
 
 // Eventos
-docyment.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     
     
 });
