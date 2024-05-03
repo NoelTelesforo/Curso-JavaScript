@@ -72,19 +72,30 @@ color.addEventListener('Change', e => {
 
 
 // Funciones
-function mostrarAutos() {
+function mostrarAutos(autos) {
 
-    const {marca, modelo, year, puertas, transmision, precio, color }= auto;
-    const autoHMTL = document.createElement('p');
+    // Elimina el HTML previo
+    LimpiarHTML();
 
-    autoHMTL.textContext = `^
-        ${marca} ${modelo} - ${year} - ${puertas} Puertas - Transmisión: ${transmision} - Precio: ${precio} - Color: ${color}
-    
-    
-    `;
+    autos.forEach(auto => {
+        const {marca, modelo, year, puertas, transmision, precio, color }= auto;
+        const autoHMTL = document.createElement('p');
 
-    // Insertar en el HTML
-    resultado.appendChild(autoHMTL);
+        autoHMTL.textContext = `
+            ${marca} ${modelo} - ${year} - ${puertas} Puertas - Transmisión: ${transmision} - Precio: ${precio} - Color: ${color}
+        
+        `;
+
+        // Insertar en el HTML
+        resultado.appendChild(autoHMTL);
+    })
+}
+
+// Limpia el HTML
+function LimpiarHTML() {
+    while(resultado.firstChild) {
+        resultado.removeChild(resultado.firstChild);
+    }
 }
 
 // Genera los años del select
@@ -103,7 +114,9 @@ function llenarSelect() {
 // Función que filtra en base a la busqueda
 function filtrarAuto() {
     const resultado = autos.filter(filtrarMarca).filter(filtrarYear)
-    console.log(resultado);
+    // console.log(resultado);
+
+    mostrarAutos(resultado);
 }
 
 
