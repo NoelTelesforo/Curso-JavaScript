@@ -199,3 +199,4 @@ function filtrarColor(auto) {
     }
     return auto;
 }
+
