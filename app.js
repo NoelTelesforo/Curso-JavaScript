@@ -174,6 +174,5 @@ function cotizarSeguro(e) {
     const total = seguro.cotizarSeguro();
 
     // Utilizar el prototype que va a cotizar
-    ui.mostrarResultado(seguro, total);
-    
+    ui.mostrarResultado(seguro, total);    
 }
