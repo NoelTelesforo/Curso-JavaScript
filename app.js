@@ -78,5 +78,6 @@ function cotizarSeguro(e) {
         return;
     }
 
+    ui.mostrarMensaje('Cotizando...', 'exito');
     
 }
