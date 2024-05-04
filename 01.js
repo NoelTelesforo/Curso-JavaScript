@@ -11,10 +11,17 @@ class Cliente {
         this.saldo = saldo;
     }
 
+    // MÉTODOS DE LAS CLASES AL FINAL SON FUNCIONES, DENTRO DE LAS CLASES SE LLAMAN MÉTODOS
+
+    mostrarInformacion() {
+        return `Cliente: ${this.nombre}, tu saldo es de ${this.saldo}`;
+    }
+
 }
 
 // INSTANCIAR CLASE
 const juan = new Cliente('Juan', 400);
+console.log(juan.mostrarInformacion());
 console.log(juan);
 
 
@@ -29,8 +36,13 @@ const Cliente2 = class {
         this.nombre = nombre;
         this.saldo = saldo;
     }
+
+    mostrarInformacion() {
+        return `Cliente: ${this.nombre}, tu saldo es de ${this.saldo}`;
+    }
 }
 
 // INSTANCIAR CLASE
 const juan2 = new Cliente2('Juan', 400);
+console.log(juan2.mostrarInformacion());
 console.log(juan2);
