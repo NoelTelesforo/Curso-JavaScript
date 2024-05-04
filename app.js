@@ -14,15 +14,39 @@ function eventListeners() {
 }
 
 
+// Clases
+
+class Presupuesto {
+    constructor(presupuesto){
+        this.presupuesto = Number(presupuesto);
+        this.restante = Number(presupuesto);
+        this.gastos = [];
+    }
+}
+
+class UI {
+
+}
+
+
+// Instanciar
+const ui = new UI();
+let presupuesto;
+
 
 // Funciones
 
 function preguntarPresupuesto() {
     const presupuestoUsuario = prompt('¿Cuál es tu presupuesto?');
-    console.log(presupuestoUsuario);
+    // console.log(presupuestoUsuario);
 
     // Recarga la ventana actual
     if(presupuestoUsuario === '' || presupuestoUsuario === null || isNaN(presupuestoUsuario ) || presupuestoUsuario <= 0) {
         window.location.reload();
     }
+
+
+    // Presupuesto valido
+    presupuesto = new Presupuesto(presupuestoUsuario);
+    console.log(presupuesto);
 }
