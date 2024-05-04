@@ -17,12 +17,19 @@ class Cliente {
         return `Cliente: ${this.nombre}, tu saldo es de ${this.saldo}`;
     }
 
+    // MÉTODO ESTÁTICO, PARA LLAMARLO NO ES NECESARIO INSTANCIAR LA CLASE
+    static bienvenida() {
+        return `Bienvenido alcajero`;
+    }
+
 }
 
 // INSTANCIAR CLASE
 const juan = new Cliente('Juan', 400);
 console.log(juan.mostrarInformacion());
 console.log(juan);
+
+console.log(Cliente.bienvenida());
 
 
 
