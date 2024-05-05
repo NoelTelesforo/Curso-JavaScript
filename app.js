@@ -27,7 +27,12 @@ class Presupuesto {
 
     nuevoGasto(gasto) {
         this.gastos = [...this.gastos, gasto];
-        console.log(this.gastos);
+        this.calcularRestante();
+    }
+
+    calcularRestante() {
+        const gastado = this.gastos.reduce((total, gasto) => total + gasto.cantidad, 0);
+        this.restante = this.presupuesto - gastado;
     }
 }
 
@@ -103,6 +108,10 @@ class UI {
             gastoListado.removeChild(gastoListado.firstChild);
         }
     }
+
+    actualizarRestante(restante) {
+        document.querySelector('#restante').textContent = restante;
+    }
 }
 
 
@@ -158,8 +167,10 @@ function agregarGasto(e) {
     ui.imprimirAlerta('Gasto agregado correctamente');
 
     // Imprimir los gastos
-    const {gastos} = presupuesto;
+    const {gastos, restante} = presupuesto;
     ui.agregarGastoListado(gastos);
+
+    ui.actualizarRestante(restante);
 
     // Reinicia el formulario
     formulario.reset();
