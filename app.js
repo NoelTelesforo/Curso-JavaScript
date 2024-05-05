@@ -83,7 +83,7 @@ class UI {
 
 
             // Agregar el HTML del gasto
-            nuevoGasto.innerHTML = `${nombre} <span class="badge badge-primary badge-pill">$${cantidad}</span>`
+            nuevoGasto.innerHTML = `${nombre} <span class="badge badge-primary badge-pill">$ ${cantidad}</span>`
             
             // Botón para borrar el gasto
             const btnBorrar = document.createElement('button');
